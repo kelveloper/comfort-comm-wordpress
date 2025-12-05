@@ -28,6 +28,7 @@ Thumbs.db
 # Environment (secrets)
 .env
 .env.local
+wp-config.php
 
 # Temp
 *.tmp
