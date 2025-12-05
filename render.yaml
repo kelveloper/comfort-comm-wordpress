@@ -1,0 +1,47 @@
+services:
+  # WordPress Web Service
+  - type: web
+    name: comfort-comm-chatbot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: WORDPRESS_DB_HOST
+        fromDatabase:
+          name: wordpress-db
+          property: host
+      - key: WORDPRESS_DB_USER
+        fromDatabase:
+          name: wordpress-db
+          property: user
+      - key: WORDPRESS_DB_PASSWORD
+        fromDatabase:
+          name: wordpress-db
+          property: password
+      - key: WORDPRESS_DB_NAME
+        fromDatabase:
+          name: wordpress-db
+          property: database
+      - key: CHATBOT_PG_HOST
+        sync: false
+      - key: CHATBOT_PG_PORT
+        value: "5432"
+      - key: CHATBOT_PG_DATABASE
+        value: "postgres"
+      - key: CHATBOT_PG_USER
+        sync: false
+      - key: CHATBOT_PG_PASSWORD
+        sync: false
+      - key: CHATBOT_SUPABASE_ANON_KEY
+        sync: false
+      - key: CHATBOT_GEMINI_API_KEY
+        sync: false
+    disk:
+      name: wp-uploads
+      mountPath: /var/www/html/wp-content/uploads
+      sizeGB: 1
+
+databases:
+  - name: wordpress-db
+    databaseName: wordpress
+    user: wordpress
+    plan: free

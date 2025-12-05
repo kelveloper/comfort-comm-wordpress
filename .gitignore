@@ -1,0 +1,38 @@
+# Database
+wp-content/database/
+*.sqlite
+
+# Debug
+wp-content/debug.log
+*.log
+
+# Uploads (stored on Render disk)
+wp-content/uploads/
+
+# Cache
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/object-cache.php
+wp-content/wp-cache-config.php
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment (secrets)
+.env
+.env.local
+
+# Temp
+*.tmp
+*.temp
+*.bak
+
+# Plugin has its own repo - remove its .git
+wp-content/plugins/comfort-comm-chatbot/.git/

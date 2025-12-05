@@ -1,0 +1,74 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Editor-based HTTP Client requests
+
+/httpRequests/
+
+# Datasource local storage ignored files
+.vscode
+.snyk
+.snykignore
+composer.json
+package.json
+.dcignore
+.DS_Store
+/dataSources/
+/dataSources.local.xml
+.idea/
+/debug/
+# package.json is now needed for Snyk configuration
+# package.json
+QUERIES.md
+TESTS.md
+TODO.md
+GIT-COMMANDS.md
+includes/utilities/chatbot-keyguard-key.php
+includes/analytics/DEFINITIONS.md
+
+# Claude Code / AI assistant folders - DO NOT DISTRIBUTE
+.claude/
+
+# Test files - DO NOT DISTRIBUTE
+tests/
+tools/
+check-*.php
+
+# Meeting notes and internal docs
+*.md
+!readme.md
+!README.md
+!LICENSE.md
+
+# Ignore all files in the results folder
+results/*
+uploads/*
+audio/*
+transcripts/*
+downloads/*
+chatbot-logs/*
+widget-logs/*
+includes/transformers/sentential_embeddings_cache/*
+
+# Allow tracking of only the index.php file in the results folder
+!results/index.php
+!uploads/index.php
+!audio/index.php
+!transcripts/index.php
+!downloads/index.php
+!chatbot-logs/index.php
+!widget-logs/index.php
+!includes/transformers/sentential_embeddings_cache/index.php
+
+# Ignore specific files
+includes/transformers/sentential_embeddings_cache.php
+includes/transformers/lexical_embeddings_cache.php
+includes/tools/test-jan-ai.php
+GIT-COMMANDS.md
+LOCAL-AI MODEL.md
+
+# Ignore third-party vendor libraries
+vendor/
+
+

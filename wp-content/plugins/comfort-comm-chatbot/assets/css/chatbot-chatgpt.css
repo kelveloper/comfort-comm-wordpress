@@ -1,0 +1,1000 @@
+/* 
+ * Kognetiks Chatbot - Stylesheet
+ * 
+ * This CSS file contains styles for the Chatbot plugin.
+ * It includes styles for the chatbot interface, messages, and other UI elements.
+ * 
+ * Customize these styles to match your website's design.
+ *
+ */
+
+/* Avatar Settings - Ver 1.5.0 */
+.chatbot-avatar {
+    width: 60px;
+    height: 60px;
+}
+
+#chatgpt-open-btn.avatar-icon {
+    width: 70px;
+    padding: 5px 5px;
+}
+
+/* Padding for Avatars - Ver 1.5.0 */
+#chatgpt-open-btn.dashicon {
+    padding: 25px;
+    font-family: inherit !important;
+    height: 20px;
+    width: 20px;
+}
+
+/* Avatar Settings - Ver 1.5.0 */
+.chatbot-bubble {
+    background-color: #f0f0f0;
+    color: #000000;
+    border-radius: 3px;
+    padding: 10px 15px; /* Balanced padding */
+    margin: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    position: absolute;
+    right: 80px;
+    z-index: 100;
+    white-space: normal;
+    display: inline-block;
+    font: inherit !important;
+    /*font-family: inherit !important;*/
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-sizing: border-box;
+    min-width: 300px; /* Minimum width */
+    max-width: 500px; /* Maximum width */
+    max-height: 100px; /* Maximum height */
+    overflow-y: auto; /* Scrollbar for overflow content */
+}
+
+/* Set font family to sans-serif for all text within the plugin */
+.chatbot-container * {
+    font-family: inherit; /* Inherits font-family from parent */
+}
+
+/* CSS for the chatbot interface */
+#chatbot-chatgpt {
+    transition: width 0.5s ease, height 0.5s ease;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    padding-bottom: 10px;
+}
+
+/* Support for a floating version of the chatbot - Ver 1.7.1 */
+/* Updated Ver 2.4.9 - Cleaner look with website colors */
+.chatbot-floating-style {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(13, 60, 116, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    padding-bottom: 10px;
+}
+
+/* Support for an embedded version of the chatbot - Ver 1.7.1 */
+.chatbot-embedded-style {
+    height: 50vh !important; /* Adjust as needed */
+    overflow: hidden;
+    position: relative !important; /* Keeps bot in the same position */
+    margin: 10px auto; /* Centers horizontally and gives margin at top and bottom */
+    padding: 10px; /* Adds padding inside the chatbot */
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    left: 0;
+    right: 0;
+}
+
+/* Removed CSS from JS file - Ver 1.7.3 */
+/* Updated Ver 2.4.9 - Wider and taller chatbot */
+.chatbot-wide {
+    width: 420px !important;
+    height: 550px !important;
+    overflow: visible;
+}
+
+/* Removed CSS from JS file - Ver 1.7.3 */
+/* Updated Ver 2.4.9 - Wider narrow mode */
+.chatbot-narrow {
+    width: 380px !important;
+    height: 500px !important;
+    overflow: visible;
+}
+
+/* Removed CSS from JS file - Ver 1.7.3 */
+/* Updated Ver 2.4.9 - Keep some margin so header buttons are visible */
+.chatbot-full {
+    width: calc(100% - 20px) !important;
+    height: calc(100% - 20px) !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    top: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    overflow: visible;
+}
+
+/* Wide - Ver 1.4.2 */
+#chatbot-chatgpt.wide {
+    width: 500px;
+}
+
+#chatbot-chatgpt.embedded-width {
+    width: 90%;
+}
+
+/* Updated Ver 2.4.9 - Match website dark blue #0D3C74 */
+#chatbot-chatgpt-header {
+    background-color: #0D3C74;
+    color: #ffffff;
+    padding: 18px 15px;
+    min-height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#chatbot-chatgpt-header-embedded {
+    background-color: #0D3C74;
+    color: #ffffff;
+    padding: 18px 15px;
+    min-height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ver 2.5.0: Improved alignment - consistent padding on all sides */
+#chatbot-chatgpt-conversation {
+    flex-grow: 1;
+    padding: 10px 15px !important;
+    overflow-y: auto;
+    max-height: 90vh; /* Adjust the percentage as needed */
+}
+
+/* REPLACED IN V2.0.9 WITH BELOW */
+/* #chatbot-chatgpt-input {
+    display: flex;
+    padding: 10px;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* Ver 2.5.0: Input container - wraps input-area and buttons inline */
+#chatbot-chatgpt-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; /* Center vertically */
+    gap: 8px;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+/* Ver 2.5.0: Input area takes remaining space after buttons */
+#chatbot-chatgpt-input-area {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+/* Ver 2.5.0: Styled input box - aligned with bubbles */
+#chatbot-chatgpt-message {
+    width: 100% !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    padding: 10px 12px !important;
+    font-size: 0.9rem !important;
+    resize: none !important;
+    min-height: 40px;
+    max-height: 80px;
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+    line-height: 1.4 !important;
+}
+
+#chatbot-chatgpt-message:focus {
+    border: 1px solid #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Ver 2.5.0: Submit button styled inline with input */
+#chatbot-chatgpt-submit {
+    background-color: #0D3C74;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+}
+
+#chatbot-chatgpt-submit img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1); /* Make icon white */
+}
+
+/* Ver 2.5.0: Buttons container - only for file upload buttons, hidden if empty */
+#chatbot-chatgpt-buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 0 15px 5px 15px;
+}
+
+/* Hide if only contains whitespace/empty */
+#chatbot-chatgpt-buttons-container:empty {
+    display: none;
+}
+
+#chatbot-chatgpt-submit:hover {
+    background-color: #1F7CEC !important;
+}
+
+/* File Upload Button - Ver 1.7.6 */
+#chatbot-chatgpt-upload-file {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 1px;
+    padding: 1px 1px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+#chatbot-chatgpt-upload-file:hover {
+    background-color: #dcdcdc !important;    
+}
+
+/* File Upload MP3 Button - Ver 2.0.1 */
+#chatbot-chatgpt-upload-mp3 {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 1px;
+    padding: 1px 1px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+#chatbot-chatgpt-upload-mp3:hover {
+    background-color: #dcdcdc !important;    
+}
+
+/* Ver 2.4.9 - Hide erase button */
+#chatbot-chatgpt-erase-btn {
+    display: none !important;
+}
+
+/* Text to Speech Button - Ver 1.7.6 */
+#chatbot-chatgpt-text-to-speech-btn {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 1px;
+    padding: 1px 1px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+#chatbot-chatgpt-text-to-speech-btn:hover {
+    background-color: #dcdcdc !important;    
+}
+
+#chatbot-chatgpt-download-transcript-btn:hover {
+    background-color: #dcdcdc !important; 
+}
+
+#chatbot-chatgpt-download-transcript-btn {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 1px;
+    padding: 1px 1px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+/* Speech Recognition Button - Ver 2.1.5.1 */
+#chatbot-chatgpt-speech-recognition-btn:hover {
+    background-color: #dcdcdc !important; 
+}
+
+#chatbot-chatgpt-speech-recognition-btn {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 1px;
+    padding: 1px 1px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+/* Ver 2.5.0: CSS for message container - improved alignment */
+.chat-message {
+    margin: 8px 0;
+    padding: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    display: flex;
+}
+
+/* Ver 2.5.0: User message aligned to right - like iMessage */
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    font: inherit;
+    margin: 8px 0;
+    padding: 0;
+}
+
+/* Updated Ver 2.5.0 - User message bubble - light blue background, dark text, text left-aligned inside */
+.chatbot-user-text {
+    display: inline-block;
+    background-color: #e0edff !important;
+    color: #0D3C74 !important;
+    padding: 10px 14px;
+    border-radius: 12px 12px 0 12px;
+    overflow-wrap: anywhere;
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    border: 1px solid #b8d4fe;
+    box-shadow: 0 2px 4px rgba(13, 60, 116, 0.1);
+    max-width: 85%;
+    width: fit-content;
+    text-align: left;
+}
+
+/* Force visibility of user text */
+.chatbot-user-text * {
+    color: #0D3C74 !important;
+    font-size: 0.85rem !important;
+}
+
+/* Ver 2.5.0: Bot message aligned to left - same indent as user */
+.bot-message {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 8px 0;
+    padding: 0;
+}
+
+.chatbot-bot-text {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #1e3a8a;
+    padding: 10px 14px;
+    border-radius: 12px 12px 12px 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 85%;
+    width: fit-content;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+    white-space: normal; /* Changed from pre-wrap to remove extra whitespace */
+}
+
+.chatbot-bot-text p,
+.chatbot-bot-text em,
+.chatbot-bot-text i,
+.chatbot-bot-text strong,
+.chatbot-bot-text b,
+.chatbot-bot-text span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-style: normal !important;
+    font-weight: normal !important;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Force all text inside bot messages to be normal (not italic) */
+.chatbot-bot-text * {
+    font-style: normal !important;
+}
+
+.error-message {
+    display: inline-block;
+    background-color: red;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 12px 12px 12px 0;
+    overflow-wrap: anywhere;
+    font: inherit;
+}
+
+.error-text {
+    color: black;
+    font: inherit;
+}
+
+/* CSAT Feedback Buttons */
+.chatbot-csat-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.chatbot-csat-text {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-right: 4px;
+}
+
+.chatbot-csat-btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #475569;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chatbot-csat-btn:hover:not(:disabled) {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.chatbot-csat-yes:hover:not(:disabled) {
+    background-color: #dcfce7;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.chatbot-csat-no:hover:not(:disabled) {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+.chatbot-csat-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* FAQ Category Buttons - Updated Ver 2.4.9 to match website colors */
+.faq-buttons-container {
+    padding: 10px 5px;
+    margin: 5px 0;
+}
+
+.faq-category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Updated Ver 2.4.9 - Match website colors #0D3C74 and #1F7CEC */
+.faq-category-button {
+    background: linear-gradient(135deg, #0D3C74 0%, #1F7CEC 100%);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    box-shadow: 0 3px 8px rgba(13, 60, 116, 0.3);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.faq-category-button:hover {
+    background: linear-gradient(135deg, #3b8df5 0%, #5ba3f7 100%) !important;
+    background-color: #3b8df5 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(13, 60, 116, 0.4);
+}
+
+.faq-category-button:active {
+    transform: translateY(0);
+}
+
+.faq-category-button:focus {
+    background: linear-gradient(135deg, #3b8df5 0%, #5ba3f7 100%) !important;
+    background-color: #3b8df5 !important;
+    color: #ffffff !important;
+    outline: none;
+}
+
+.faq-question-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.faq-category-header {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #0D3C74;
+    margin-bottom: 8px;
+    padding-left: 4px;
+    letter-spacing: 0.02em;
+}
+
+.faq-question-button {
+    background-color: #F8FAFC;
+    color: #0D3C74;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    text-align: left;
+    white-space: normal;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* Ver 2.5.0: Fixed hover - ensure text stays visible */
+.faq-question-button:hover {
+    background-color: #e0edff !important;
+    color: #0D3C74 !important;
+    border-color: #1F7CEC !important;
+    transform: translateX(3px);
+    box-shadow: 0 3px 8px rgba(13, 60, 116, 0.2);
+}
+
+.faq-back-button {
+    background-color: transparent;
+    color: #64748B;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.faq-back-button:hover {
+    background-color: #F8FAFC;
+    border-color: #0D3C74;
+    color: #0D3C74;
+}
+
+.faq-hint {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-top: 12px;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 0.025em;
+}
+
+.message-space {
+    height: 10px;
+}
+
+/* Updated Ver 2.4.9 - Minimize button as dash */
+.chatbot-collapse-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 0;
+}
+
+.chatbot-collapse-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide the icon image and show dash instead */
+.chatbot-collapse-btn img,
+.chatbot-collapse-btn .chatbot-collapse-icon {
+    display: none !important;
+}
+
+.chatbot-collapse-btn::before {
+    content: "–";
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.chatbot-collapsed {
+    width: 48px;
+    height: 48px;
+    /* Removed background-color - Ver 1.8.6 */
+    /* background-color: #007bff; */
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+/* #chatbot-open-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: #ec2d2d;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    float: right;
+    font: inherit;
+    font-family: inherit;
+} */
+
+/* Reset font family for Dashicons */
+#chatgpt-open-btn-dashicon {
+    position: relative;
+    /* Removed font-family - Ver 1.8.6 */
+    /* font-family: dashicons, inherit !important; */
+    font-family: inherit !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+}
+
+/* Updated Ver 2.4.9 - Match website blue #1F7CEC */
+#chatgpt-open-btn {
+    transition: width 0.5s ease, height 0.5s ease;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    background-color: #0D3C74;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    float: right;
+    box-shadow: 0 4px 12px rgba(13, 60, 116, 0.4);
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    z-index: 100;
+    font: inherit !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatgpt-open-btn:hover {
+    background-color: #1F7CEC;
+    transform: scale(1.05);
+}
+
+#chatbot-chatgpt-title.title {
+    color: #ffffff;
+    font-size: inherit;
+    flex-grow: 1;
+}
+
+/* Updated Ver 2.4.9 - Typing indicator with bouncing dots */
+.chatbot-typing-indicator {
+    display: inline-flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    background-color: #e8f0fe !important;
+    padding: 14px 20px !important;
+    border-radius: 12px 12px 12px 0 !important;
+    box-shadow: 0 2px 6px rgba(13, 60, 116, 0.15) !important;
+    gap: 6px !important;
+    min-width: 70px !important;
+    min-height: 30px !important;
+    border: 1px solid #d0e1fd !important;
+}
+
+.chatbot-typing-indicator span,
+.chatbot-typing-dot {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #1F7CEC !important;
+    border-radius: 50% !important;
+    animation: typingBounce 1.4s infinite ease-in-out !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    line-height: 0 !important;
+}
+
+.chatbot-typing-indicator span:nth-child(1),
+.chatbot-typing-dot:nth-child(1) {
+    animation-delay: 0s !important;
+}
+
+.chatbot-typing-indicator span:nth-child(2),
+.chatbot-typing-dot:nth-child(2) {
+    animation-delay: 0.2s !important;
+}
+
+.chatbot-typing-indicator span:nth-child(3),
+.chatbot-typing-dot:nth-child(3) {
+    animation-delay: 0.4s !important;
+}
+
+@keyframes typingBounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.chatbot-attribution {
+    text-align: center;
+    font-size: 11px;
+}
+
+.chatbot-attribution-link {
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.chatbot-attribution-text {
+    text-align: center;
+    font-size: 11px;
+}
+
+@keyframes typing {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* REPLACED IN V2.0.9 WITH BELOW */
+/* #chatbot-chatgpt-custom-buttons {
+    text-align: center;
+} */
+
+/* REPLACED IN V2.0.9 INSTEAD OF ABOVE */
+#chatbot-chatgpt-custom-buttons {
+    justify-content: center;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+/* Updated Ver 2.4.9 - Match website colors */
+.chatbot-chatgpt-custom-button-class {
+    background-color: #1F7CEC;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    align-items: center;
+    display: inline-flex;
+  }
+
+.chatbot-chatgpt-custom-button-class:hover {
+    background-color: #0D3C74;
+}
+
+.chatbot-chatgpt-custom-button-class a {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.chatbot-chatgpt-custom-button-class a:hover {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.chatbot-chatgpt-chatbot-history {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Ver 2.5.0: Mobile responsive - consistent padding */
+@media only screen and (max-width: 600px) {
+    #chatbot-chatgpt-conversation {
+        flex-grow: 1;
+        padding: 10px 15px !important;
+        overflow-y: auto;
+        max-height: 300px;
+    }
+
+    #chatbot-chatgpt-input {
+        padding: 8px 12px;
+    }
+
+    #chatbot-chatgpt-message {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+/* Ver 2.5.0: Desktop - consistent padding */
+@media only screen and (min-width: 600px) {
+    #chatbot-chatgpt-conversation {
+        flex-grow: 1;
+        padding: 10px 15px !important;
+        overflow-y: auto;
+        max-height: 400px;
+    }
+}
+
+/* Added in Version 2.2.7 - 2025 03 17 */
+#chatbot-chatgpt-header {
+    position: relative;
+}
+
+/* Added in Version 2.2.7 - 2025 03 17 */
+/* Updated Ver 2.4.9 - Expand button styling */
+.chatbot-resize-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 0;
+}
+
+.chatbot-resize-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide the icon image and show expand icon instead */
+.chatbot-resize-btn img {
+    display: none !important;
+}
+
+.chatbot-resize-btn::before {
+    content: "⛶";
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+/* Added in Version 2.2.7 - 2025 03 17 */
+.chatbot-resize-up-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    /* Adjusted padding - Ver 1.8.6 */
+    padding: 1px;
+    border-radius: 1px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 0;
+}
+
+.chatbot-resize-up-btn:hover {
+    background-color: #dcdcdc;    
+}
+
+
+/* Added in Version 2.2.7 - 2025 03 17 */
+.chatbot-resize-down-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    /* Adjusted padding - Ver 1.8.6 */
+    padding: 1px;
+    border-radius: 1px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 0;
+}
+
+.chatbot-resize-down-btn:hover {
+    background-color: #dcdcdc;    
+}
+
+/* Added in Version 2.2.7 - 2025 03 17 */
+.chatbot-header-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+#chatbot-widget-iframe {
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+iframe {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
